@@ -1,0 +1,568 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14EDCFEA-36E8-49D7-9E6C-0CD4677C7FA5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EnterpriseManagerWebApp</RootNamespace>
+    <AssemblyName>EnterpriseManagerWebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.SqlClient, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.5.0\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BusinessManager\Forms\AddBusiness.aspx" />
+    <Content Include="BusinessManager\Forms\EditBusiness.aspx" />
+    <Content Include="DesignTemplates\BusinessMaster.Master" />
+    <Content Include="DesignTemplates\CustomerMaster.Master" />
+    <Content Include="DesignTemplates\EmployeeMaster.Master" />
+    <Content Include="DesignTemplates\ProductMaster.Master" />
+    <Content Include="DesignTemplates\SingleSignOnMaster.Master" />
+    <Content Include="DesignTemplates\ApplicationMaster.Master" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BootstrapOptions.aspx" />
+    <Content Include="Bootstraps\Cosmo.aspx" />
+    <Content Include="Bootstraps\Cyborg.aspx" />
+    <Content Include="Bootstraps\Darkly.aspx" />
+    <Content Include="Bootstraps\Journal.aspx" />
+    <Content Include="Bootstraps\Materia.aspx" />
+    <Content Include="Bootstraps\Simplex.aspx" />
+    <Content Include="Bootstraps\Slate.aspx" />
+    <Content Include="Bootstraps\Solar.aspx" />
+    <Content Include="Bootstraps\SpaceLab.aspx" />
+    <Content Include="Bootstraps\SuperHero.aspx" />
+    <Content Include="Bootstraps\United.aspx" />
+    <Content Include="CSS\Cosmo\bootstrap.css" />
+    <Content Include="CSS\Cosmo\bootstrap.min.css" />
+    <Content Include="CSS\Cyborg\bootstrap.css" />
+    <Content Include="CSS\Cyborg\bootstrap.min.css" />
+    <Content Include="CSS\Darkly\bootstrap.css" />
+    <Content Include="CSS\Darkly\bootstrap.min.css" />
+    <Content Include="CSS\Journal\bootstrap.css.css" />
+    <Content Include="CSS\Journal\bootstrap.min.css.css" />
+    <Content Include="CSS\Materia\bootstrap.css.css" />
+    <Content Include="CSS\Materia\bootstrap.min.css.css" />
+    <Content Include="CSS\Simplex\bootstrap.css" />
+    <Content Include="CSS\Simplex\bootstrap.min.css" />
+    <Content Include="CSS\Slate\bootstrap.css" />
+    <Content Include="CSS\Slate\bootstrap.min.css" />
+    <Content Include="CSS\Solar\bootstrap.css" />
+    <Content Include="CSS\Solar\bootstrap.min.css" />
+    <Content Include="CSS\SpaceLab\bootstrap.css" />
+    <Content Include="CSS\SpaceLab\bootstrap.min.css" />
+    <Content Include="CSS\SuperHero\bootstrap.css" />
+    <Content Include="CSS\SuperHero\bootstrap.min.css" />
+    <Content Include="CSS\United\bootstrap.css" />
+    <Content Include="CSS\United\bootstrap.min.css" />
+    <Content Include="CustomerManager\CustomerGateway.aspx" />
+    <Content Include="BusinessManager\BusinessGateway.aspx" />
+    <Content Include="ApplicationManager\ApplicationGateway.aspx" />
+    <Content Include="CustomerManager\Views\AllCustomers.aspx" />
+    <Content Include="CustomerManager\Views\CustomerPurchase.aspx" />
+    <Content Include="CustomerManager\Views\Receipts.aspx" />
+    <Content Include="CustomerManager\Views\NewCustomers.aspx" />
+    <Content Include="CustomerManager\Views\FormerEmployees.aspx" />
+    <Content Include="CustomerManager\Views\AuditCustomers.aspx" />
+    <Content Include="BusinessManager\Views\Locations.aspx" />
+    <Content Include="BusinessManager\Views\Business.aspx" />
+    <Content Include="BusinessManager\Views\Staff.aspx" />
+    <Content Include="BusinessManager\Views\Suppliers.aspx" />
+    <Content Include="BusinessManager\Views\Financial.aspx" />
+    <Content Include="BusinessManager\Views\Audit.aspx" />
+    <Content Include="ProductManager\Forms\AddNewProduct.aspx" />
+    <Content Include="ProductManager\Views\New Products.aspx" />
+    <Content Include="ProductManager\Views\Current Products.aspx" />
+    <Content Include="ProductManager\Views\Discontinued.aspx" />
+    <Content Include="ProductManager\Views\Products Supplier.aspx" />
+    <Content Include="ProductManager\Views\ProductPrices.aspx" />
+    <Content Include="ProductManager\Views\Audit.aspx" />
+    <Content Include="EmployeeManager\Views\NewHires.aspx" />
+    <Content Include="EmployeeManager\Views\Applicants.aspx" />
+    <Content Include="EmployeeManager\Views\CurrentEmployees.aspx" />
+    <Content Include="EmployeeManager\Views\FormerEmployees.aspx" />
+    <Content Include="EmployeeManager\Views\EmployeeAudit.aspx" />
+    <Content Include="EmployeeManager\Views\OpenPositions.aspx" />
+    <Content Include="ProductManager\ProductGateway.aspx" />
+    <Content Include="EmployeeManager\EmployeeGateway.aspx" />
+    <Content Include="SSO\EnterpriseGateway.aspx" />
+    <Content Include="SSO\Login.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BootstrapOptions.aspx.cs">
+      <DependentUpon>BootstrapOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BootstrapOptions.aspx.designer.cs">
+      <DependentUpon>BootstrapOptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\Cosmo.aspx.cs">
+      <DependentUpon>Cosmo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\Cosmo.aspx.designer.cs">
+      <DependentUpon>Cosmo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\Cyborg.aspx.cs">
+      <DependentUpon>Cyborg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\Cyborg.aspx.designer.cs">
+      <DependentUpon>Cyborg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\Darkly.aspx.cs">
+      <DependentUpon>Darkly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\Darkly.aspx.designer.cs">
+      <DependentUpon>Darkly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\Journal.aspx.cs">
+      <DependentUpon>Journal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\Journal.aspx.designer.cs">
+      <DependentUpon>Journal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\Materia.aspx.cs">
+      <DependentUpon>Materia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\Materia.aspx.designer.cs">
+      <DependentUpon>Materia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\Simplex.aspx.cs">
+      <DependentUpon>Simplex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\Simplex.aspx.designer.cs">
+      <DependentUpon>Simplex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\Slate.aspx.cs">
+      <DependentUpon>Slate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\Slate.aspx.designer.cs">
+      <DependentUpon>Slate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\Solar.aspx.cs">
+      <DependentUpon>Solar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\Solar.aspx.designer.cs">
+      <DependentUpon>Solar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\SpaceLab.aspx.cs">
+      <DependentUpon>SpaceLab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\SpaceLab.aspx.designer.cs">
+      <DependentUpon>SpaceLab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\SuperHero.aspx.cs">
+      <DependentUpon>SuperHero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\SuperHero.aspx.designer.cs">
+      <DependentUpon>SuperHero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstraps\United.aspx.cs">
+      <DependentUpon>United.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstraps\United.aspx.designer.cs">
+      <DependentUpon>United.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessManager\Forms\AddBusiness.aspx.cs">
+      <DependentUpon>AddBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessManager\Forms\AddBusiness.aspx.designer.cs">
+      <DependentUpon>AddBusiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessManager\Forms\EditBusiness.aspx.cs">
+      <DependentUpon>EditBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessManager\Forms\EditBusiness.aspx.designer.cs">
+      <DependentUpon>EditBusiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesignTemplates\ApplicationMaster.Master.cs">
+      <DependentUpon>ApplicationMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesignTemplates\ApplicationMaster.Master.designer.cs">
+      <DependentUpon>ApplicationMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DesignTemplates\BusinessMaster.Master.cs">
+      <DependentUpon>BusinessMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesignTemplates\BusinessMaster.Master.designer.cs">
+      <DependentUpon>BusinessMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DesignTemplates\CustomerMaster.Master.cs">
+      <DependentUpon>CustomerMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesignTemplates\CustomerMaster.Master.designer.cs">
+      <DependentUpon>CustomerMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DesignTemplates\EmployeeMaster.Master.cs">
+      <DependentUpon>EmployeeMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesignTemplates\EmployeeMaster.Master.designer.cs">
+      <DependentUpon>EmployeeMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DesignTemplates\ProductMaster.Master.cs">
+      <DependentUpon>ProductMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesignTemplates\ProductMaster.Master.designer.cs">
+      <DependentUpon>ProductMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DesignTemplates\SingleSignOnMaster.Master.cs">
+      <DependentUpon>SingleSignOnMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesignTemplates\SingleSignOnMaster.Master.designer.cs">
+      <DependentUpon>SingleSignOnMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerGateway.aspx.cs">
+      <DependentUpon>CustomerGateway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerGateway.aspx.designer.cs">
+      <DependentUpon>CustomerGateway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessManager\BusinessGateway.aspx.cs">
+      <DependentUpon>BusinessGateway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessManager\BusinessGateway.aspx.designer.cs">
+      <DependentUpon>BusinessGateway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationManager\ApplicationGateway.aspx.cs">
+      <DependentUpon>ApplicationGateway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplicationManager\ApplicationGateway.aspx.designer.cs">
+      <DependentUpon>ApplicationGateway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\Views\AllCustomers.aspx.cs">
+      <DependentUpon>AllCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\Views\AllCustomers.aspx.designer.cs">
+      <DependentUpon>AllCustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\Views\CustomerPurchase.aspx.cs">
+      <DependentUpon>CustomerPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\Views\CustomerPurchase.aspx.designer.cs">
+      <DependentUpon>CustomerPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\Views\Receipts.aspx.cs">
+      <DependentUpon>Receipts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\Views\Receipts.aspx.designer.cs">
+      <DependentUpon>Receipts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\Views\NewCustomers.aspx.cs">
+      <DependentUpon>NewCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\Views\NewCustomers.aspx.designer.cs">
+      <DependentUpon>NewCustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\Views\FormerEmployees.aspx.cs">
+      <DependentUpon>FormerEmployees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\Views\FormerEmployees.aspx.designer.cs">
+      <DependentUpon>FormerEmployees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\Views\AuditCustomers.aspx.cs">
+      <DependentUpon>AuditCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\Views\AuditCustomers.aspx.designer.cs">
+      <DependentUpon>AuditCustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Locations.aspx.cs">
+      <DependentUpon>Locations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Locations.aspx.designer.cs">
+      <DependentUpon>Locations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Business.aspx.cs">
+      <DependentUpon>Business.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Business.aspx.designer.cs">
+      <DependentUpon>Business.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Staff.aspx.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Staff.aspx.designer.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Suppliers.aspx.cs">
+      <DependentUpon>Suppliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Suppliers.aspx.designer.cs">
+      <DependentUpon>Suppliers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Financial.aspx.cs">
+      <DependentUpon>Financial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Financial.aspx.designer.cs">
+      <DependentUpon>Financial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Audit.aspx.cs">
+      <DependentUpon>Audit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessManager\Views\Audit.aspx.designer.cs">
+      <DependentUpon>Audit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\Forms\AddNewProduct.aspx.cs">
+      <DependentUpon>AddNewProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductManager\Forms\AddNewProduct.aspx.designer.cs">
+      <DependentUpon>AddNewProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\Views\New Products.aspx.cs">
+      <DependentUpon>New Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductManager\Views\New Products.aspx.designer.cs">
+      <DependentUpon>New Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\Views\Current Products.aspx.cs">
+      <DependentUpon>Current Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductManager\Views\Current Products.aspx.designer.cs">
+      <DependentUpon>Current Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\Views\Discontinued.aspx.cs">
+      <DependentUpon>Discontinued.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductManager\Views\Discontinued.aspx.designer.cs">
+      <DependentUpon>Discontinued.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\Views\Products Supplier.aspx.cs">
+      <DependentUpon>Products Supplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductManager\Views\Products Supplier.aspx.designer.cs">
+      <DependentUpon>Products Supplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\Views\ProductPrices.aspx.cs">
+      <DependentUpon>ProductPrices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductManager\Views\ProductPrices.aspx.designer.cs">
+      <DependentUpon>ProductPrices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\Views\Audit.aspx.cs">
+      <DependentUpon>Audit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductManager\Views\Audit.aspx.designer.cs">
+      <DependentUpon>Audit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\NewHires.aspx.cs">
+      <DependentUpon>NewHires.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\NewHires.aspx.designer.cs">
+      <DependentUpon>NewHires.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\Applicants.aspx.cs">
+      <DependentUpon>Applicants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\Applicants.aspx.designer.cs">
+      <DependentUpon>Applicants.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\CurrentEmployees.aspx.cs">
+      <DependentUpon>CurrentEmployees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\CurrentEmployees.aspx.designer.cs">
+      <DependentUpon>CurrentEmployees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\FormerEmployees.aspx.cs">
+      <DependentUpon>FormerEmployees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\FormerEmployees.aspx.designer.cs">
+      <DependentUpon>FormerEmployees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\EmployeeAudit.aspx.cs">
+      <DependentUpon>EmployeeAudit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\EmployeeAudit.aspx.designer.cs">
+      <DependentUpon>EmployeeAudit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\OpenPositions.aspx.cs">
+      <DependentUpon>OpenPositions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeManager\Views\OpenPositions.aspx.designer.cs">
+      <DependentUpon>OpenPositions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\ProductGateway.aspx.cs">
+      <DependentUpon>ProductGateway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductManager\ProductGateway.aspx.designer.cs">
+      <DependentUpon>ProductGateway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManager\EmployeeGateway.aspx.cs">
+      <DependentUpon>EmployeeGateway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeManager\EmployeeGateway.aspx.designer.cs">
+      <DependentUpon>EmployeeGateway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SSO\EnterpriseGateway.aspx.cs">
+      <DependentUpon>EnterpriseGateway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SSO\EnterpriseGateway.aspx.designer.cs">
+      <DependentUpon>EnterpriseGateway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SSO\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SSO\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="CustomerManager\Forms\" />
+    <Folder Include="EmployeeManager\Forms\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51739</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51739/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
